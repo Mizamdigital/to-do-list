@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIZAM To-DO APP</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <h2 class="app-title">✨ My To-Do List ✨</h2>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="input-group">
+        <input type="text" id="taskInput" placeholder="Enter a new task...">
+
+        <div class="time-group">
+            <div class="time-field">
+                <label>Start</label>
+                <input type="datetime-local" id="startTime">
+            </div>
+            <div class="time-field">
+                <label>End</label>
+                <input type="datetime-local" id="endTime">
+            </div>
+        </div>
+
+        <button id="addTaskBtn">Add Task</button>
+    </div>
+
+    <div class="task-stats">
+        <span>Total: <strong id="totalCount">0</strong></span>
+        <span>Completed: <strong id="completedCount">0</strong></span>
+        <span>Remaining: <strong id="remainingCount">0</strong></span>
+    </div>
+
+    <ul class="task-list" id="taskList"></ul>
+
+    <div class="action-buttons">
+        <button class="clear-all" id="clearAllBtn">Clear All</button>
+        <button class="delete-selected" id="deleteSelected">Delete Selected</button>
+    </div>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

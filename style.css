@@ -1,0 +1,278 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#6a11cb,#2575fc);
+    padding:20px;
+}
+
+.app-container{
+    width:100%;
+    max-width:700px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 8px 32px rgba(0,0,0,0.2);
+    border:1px solid rgba(255,255,255,0.3);
+    color:#fff;
+}
+
+.app-title{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+/* Progress */
+.progress-container{
+    height:8px;
+    background:rgba(255,255,255,0.2);
+    border-radius:10px;
+    margin-bottom:20px;
+    overflow:hidden;
+}
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:#00e5ff;
+    transition:width 0.4s ease;
+}
+
+/* Inputs */
+.input-group{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-bottom:20px;
+}
+
+input,button{
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    font-size:14px;
+}
+
+#addTaskBtn{
+    background:#fff;
+    color:#764ba2;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#addTaskBtn:hover{
+  transform:translateY(-2px);
+}
+
+.time-group{
+  display:flex;
+  gap:10px;
+}
+
+.time-field{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  font-size:12px;
+}
+
+.task-stats{
+    display:flex;
+    justify-content:space-between;
+    background:rgba(255,255,255,0.15);
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+/* Task */
+.task-list{
+  list-style:none;
+  max-height:300px;
+  overflow-y:auto;
+}
+
+.task-item{
+    background:rgba(255,255,255,0.2);
+    padding:15px;
+    border-radius:14px;
+    margin-bottom:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    animation:slideIn 0.4s ease;
+}
+
+@keyframes slideIn{
+    from{opacity:0;transform:translateX(-20px);}
+    to{opacity:1;transform:translateX(0);}
+}
+
+.task-left{
+  display:flex;
+  gap:10px;
+  flex:1;
+}
+
+.task-content{
+  display:flex;
+  flex-direction:column;
+}
+
+.task-time{
+  font-size:11px;
+  opacity:0.8;
+}
+
+.status-badge{
+    font-size:10px;
+    padding:3px 6px;
+    border-radius:6px;
+    font-weight:600;
+    margin-bottom:3px;
+}
+
+.badge-new{background:#2196F3;}
+.badge-half{background:#FFC107;color:#000;}
+.badge-completed{background:#F44336;}
+
+.task-right{display:flex;gap:8px;}
+
+button{cursor:pointer;}
+.delete-btn,.edit-btn{
+    background:transparent;
+    color:#fff;
+    font-size:16px;
+}
+
+/* Toast */
+.toast{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#000;
+    color:#fff;
+    padding:12px 18px;
+    border-radius:8px;
+    opacity:0;
+    transform:translateY(20px);
+    transition:0.4s;
+}
+.toast.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* ACTION BUTTONS */
+.action-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.clear-all,
+.delete-selected{
+    flex:1;
+    padding:12px;
+    border-radius:10px;
+    font-weight:600;
+    cursor:pointer;
+    border:none;
+    transition:0.3s ease;
+}
+
+.clear-all{
+    background:#ff4d4d;
+    color:#fff;
+}
+
+.clear-all:hover{
+    background:#e60000;
+}
+
+.delete-selected{
+    background:#ffc107;
+    color:#000;
+}
+
+.delete-selected:hover{
+    background:#ffb300;
+}
+
+.delete-btn,
+.edit-btn{
+    background:transparent;
+    border:none;
+    font-size:16px;
+    cursor:pointer;
+    color:#fff;
+    transition:all 0.2s ease;
+}
+
+/* DELETE HOVER */
+.delete-btn:hover{
+    color:#ff4d4d;
+    transform:scale(1.2);
+}
+
+/* EDIT HOVER */
+.edit-btn:hover{
+    color:#00e5ff;
+    transform:scale(1.2);
+}
+
+.task-item:hover{
+    background:rgba(255,255,255,0.25);
+}
+
+/* CHECKBOX */
+.select-task{
+    transform:scale(1.2);
+    margin-right:8px;
+}
+
+/* TASK STRUCTURE */
+.task-left{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    flex:1;
+}
+
+.task-content{
+    display:flex;
+    flex-direction:column;
+}
+
+.task-time{
+    font-size:11px;
+    opacity:0.8;
+}
+
+/* STATUS BADGE */
+.status-badge{
+    font-size:10px;
+    padding:3px 6px;
+    border-radius:6px;
+    font-weight:600;
+    margin-bottom:3px;
+}
+
+.badge-active{background:#2196F3;}
+.badge-completed{background:#F44336;}
+
+/* Responsive */
+@media(max-width:600px){
+    .time-group{flex-direction:column;}
+    .task-stats{flex-direction:column;gap:5px;}
+}
